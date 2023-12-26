@@ -1,6 +1,6 @@
-# Project : flt-zapp-chat 
+# Project : flt-zapp-bwa-shamo 
 ***************************************************************
-A Flutter App by Zapp.run: Chat App Firebase, FIC-Free Program by Code With Bahri <br><br>
+A Flutter App by Zapp.run: Flutter App by Zapp.run: Building-e-commerce-and-chat-apps (BuildWithAngga Course) <br><br>
 
 Includes in this template:
 - Packages: intl, shared_preferences
@@ -10,14 +10,14 @@ Includes in this template:
 - Helpers: Responsive,Session,Utils,Extensions,Widgets
 
 # Notes:
-- Started at: Week-3 of Dec'23
+- Started at: Week-4 of Dec'23
 - Flutter using version 3.73 (Zapp.run)
-- State Mgt: xx
-- Backend: xx
+- State Mgt: Provider
+- Backend: Laravel v8
 - DB: Firebase
 
 # References:
-- [Github: bahrie127/flutter_template_chat_app](https://github.com/bahrie127/flutter_template_chat_app)
+- [Backend @ Github: galpratama/shamo-backend](https://github.com/galpratama/shamo-backend)
 
 # Resource References:
 - Random Images: [https://i.pravatar.cc/200](https://i.pravatar.cc/200)
