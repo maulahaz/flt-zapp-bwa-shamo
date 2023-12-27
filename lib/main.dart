@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'configs/x_configs.dart';
 // import 'modules/auth/x_auths.dart';
+import 'modules/auth/x_auths.dart';
 import 'modules/home/x_homes.dart';
 import 'modules/onboarding/x_onboardings.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => OnboardingPage(),
         '/home': (context) => HomePage(),
+        '/signin': (context) => SigninPage(),
       },
     );
   }

@@ -9,5 +9,5 @@
 
 //--PAGES AND PARTS
 export 'pages/register_pg.dart';
-export 'pages/login_pg.dart';
-// export 'pages/parts/modules_part.dart';
+export 'pages/signin_pg.dart';
+export 'pages/parts/header.dart';

@@ -73,7 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             const SizedBox(height: 28.0),
             MyButtons.primary(context, 'Register', () {
-              context.pushReplacement(LoginPage());
+              context.pushReplacement(SigninPage());
             }),
             const SizedBox(height: 16.0),
             //login page
@@ -83,7 +83,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 const Text('Already have an account?'),
                 TextButton(
                   onPressed: () {
-                    context.pushReplacement(LoginPage());
+                    context.pushReplacement(SigninPage());
                   },
                   child: const Text('Login'),
                 ),
