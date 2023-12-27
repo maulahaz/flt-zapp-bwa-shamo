@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../configs/x_configs.dart';
 // import '../../../widgets/x_widgets.dart';
 // import '../../home/x_homes.dart';
+import '../../../helpers/x_helpers.dart';
 import '../../../widgets/x_widgets.dart';
 import '../x_auths.dart';
 
@@ -17,6 +18,32 @@ class SigninPage extends StatefulWidget {
 class _SigninPageState extends State<SigninPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  bool isLoading = false;
+
+  Widget footer() {
+    return Container(
+      margin: EdgeInsets.only(bottom: 30),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Don\'t have an account? ',
+            style: getFont(12, color: kAppPrimary.withOpacity(0.4)),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/signup');
+            },
+            child: Text(
+              'Sign Up',
+              style: getFont(12, color: kAppPrimary),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,14 +77,19 @@ class _SigninPageState extends State<SigninPage> {
                 icon: Icons.key,
                 isObscure: true,
               ),
+              SizedBox(height: 40),
               //--Button:,
-
+              isLoading
+                  ? MyButtons.isLoading(context, '...Loading')
+                  : MyButtons.primary(context, 'Sign In', () {
+                      print('--Clicked: Sign In');
+                    }),
+              Spacer(),
               //--Footer:,
+              footer(),
 
               // passwordInput(),
               // isLoading ? LoadingButton() : signInButton(),
-              // Spacer(),
-              // footer(),
             ],
           ),
         ),
