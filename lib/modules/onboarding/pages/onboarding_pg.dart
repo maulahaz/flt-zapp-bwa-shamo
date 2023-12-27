@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/helpers/x_helpers.dart';
 import '../../../configs/x_configs.dart';
-import '../../home/x_homes.dart';
+// import '../../home/x_homes.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -15,8 +14,8 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage> {
   @override
   void initState() {
-    // Timer(Duration(seconds: 3), () => Navigator.pushNamed(context, '/home'));
-    Timer(Duration(seconds: 3), () => context.pushReplacement(HomePage()));
+    Timer(Duration(seconds: 3), () => Navigator.pushNamed(context, '/signin'));
+    // Timer(Duration(seconds: 3), () => context.pushReplacement(HomePage()));
     super.initState();
   }
 

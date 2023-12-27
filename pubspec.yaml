@@ -35,7 +35,11 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-
+        - asset: lib/assets/fonts/Poppins-Regular.ttf
+                
+    - family: DancingScript
+      fonts:
+        - asset: lib/assets/fonts/DancingScript-Regular.ttf 
         #   - family: Trajan Pro
         #     fonts:
         #       - asset: fonts/TrajanPro.ttf

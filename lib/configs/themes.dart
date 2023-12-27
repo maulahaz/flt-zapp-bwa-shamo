@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../helpers/x_helpers.dart';
 import 'x_configs.dart';
 
 class MyThemes {
   static final lightMode = ThemeData(
-    //   primarySwatch: kAppPrimary,
+      primarySwatch: getMaterialColor(kAppPrimary),
       primaryColor: kAppPrimary,
       brightness: Brightness.light,
       fontFamily: 'Poppins',
