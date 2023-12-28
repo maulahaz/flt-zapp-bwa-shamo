@@ -8,6 +8,5 @@
 // export 'services/modules_srv.dart';
 
 //--PAGES AND PARTS
-export 'pages/main_pg.dart';
-export 'pages/home_pg.dart';
-export 'pages/parts/product_card.dart';
+export 'pages/buttons_pg.dart';
+// export 'pages/parts/header.dart';

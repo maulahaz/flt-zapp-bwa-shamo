@@ -83,13 +83,11 @@ class _SigninPageState extends State<SigninPage> {
                   ? MyButtons.isLoading(context, '...Loading')
                   : MyButtons.primary(context, 'Sign In', () {
                       print('--Clicked: Sign In');
+                      Navigator.pushNamed(context, '/home');
                     }),
               Spacer(),
               //--Footer:,
               footer(),
-
-              // passwordInput(),
-              // isLoading ? LoadingButton() : signInButton(),
             ],
           ),
         ),

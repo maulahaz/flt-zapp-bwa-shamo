@@ -21,7 +21,7 @@ const String API_URL_1 = "https://fakestoreapi.com/"; // Free API: 2. 'fakestore
 //--SIZES:: Padding:
 // --------------------------------------------------
 const double kDefaultPadding = 20.0;
-const double kDefaultMargin = 30.0;
+const double kDefaultMargin = 10.0;
 
 //--SIZES:: Responsive:
 // --------------------------------------------------

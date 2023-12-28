@@ -1,75 +1,256 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_app/extensions/x_extensions.dart';
-import 'package:flutter_app/widgets/x_widgets.dart';
-// import 'package:flutter_app/configs/x_configs.dart';
+
+import '../../../configs/x_configs.dart';
+import '../../../helpers/x_helpers.dart';
+import '../x_homes.dart';
+import 'parts/product_tile.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        // backgroundColor: kTransparent,
-        title: Text('Home Page'),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Column(
+    // AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    // UserModel user = authProvider.user;
+    // ProductProvider productProvider = Provider.of<ProductProvider>(context);
+
+    Widget header() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: kDefaultMargin,
+          left: kDefaultMargin,
+          right: kDefaultMargin,
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hallo, {user.name}',
+                    style: getFont(24, color: kAppPrimaryText),
+                  ),
+                  Text(
+                    '@{user.username}',
+                    style: getFont(16, color: kAppSubtitle),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              width: 54,
+              height: 54,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: NetworkImage(
+                    'https://picsum.photos/200', //user.profilePhotoUrl,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    Widget categories() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: kDefaultMargin,
+        ),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
             children: [
               SizedBox(
-                  width: size.width * 0.5,
-                  child: MyButtons.primary(context, 'Primary with SizedBox',
-                      () => print('Primary'))),
-              SizedBox(height: 5),
-              MyButtons.primary(context, 'Primary', () => print('Primary')),
-              SizedBox(height: 5),
-              MyButtons.warning(context, 'Warning', () => print('Warning')),
-              SizedBox(height: 5),
-              MyButtons.danger(context, 'Danger', () => print('Danger')),
-              SizedBox(height: 5),
-              MyButtons.primaryOutlined(
-                  context, 'Primary Outlined', () => print('Primary Outlined')),
-              SizedBox(height: 5),
-              MyButtons.dangerOutlined(
-                  context, 'Danger Outlined', () => print('Danger Outlined')),
-              SizedBox(height: 5),
-              MyButtons.primaryGradiented(context, 'Primary Gradiented', () {
-                print('Primary Gradiented');
-              }),
-              SizedBox(height: 5),
-              MyButtons.primary(context, 'Show Primary Snackbar', () {
-                print('--Clicked: Show Snackbar');
-                MySnackbar.primary(context, 'Hello', 'Mabroook');
-              }),
-              SizedBox(height: 5),
-              MyButtons.danger(context, 'Show Danger Snackbar', () {
-                print('--Clicked: Show Snackbar');
-                MySnackbar.danger(context, 'Upps', 'Error Detected');
-              }),
-              SizedBox(height: 5),
-              MyButtons.primaryOutlined(context, 'Show Dialog', () {
-                print('Show Dialog');
-                MyDialogs.alert(context, 'Dialog', 'How are you Dialog?');
-              }),
-              SizedBox(height: 5),
-              MyButtons.primaryOutlined(context, 'Show Alert Dialog', () {
-                print('Show Alert Dialog');
-                MyDialogs.alert2(
-                    context, 'AlertDialog', 'How are you AlertDialog?');
-              }),
-              SizedBox(height: 5),
-              MyButtons.primaryGradiented(context, 'Show Loading', () {
-                print('Show Loading');
-                MyDialogs.loading(context);
-              }),
+                width: kDefaultMargin,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                margin: EdgeInsets.only(right: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: kAppPrimary,
+                ),
+                child: Text(
+                  'All Shoes',
+                  style: getFont(13, color: kAppPrimaryText),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                margin: EdgeInsets.only(right: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: kAppSubtitle,
+                  ),
+                  color: kTransparent,
+                ),
+                child: Text(
+                  'Running',
+                  style: getFont(13, color: kAppSubtitle),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                margin: EdgeInsets.only(right: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: kAppSubtitle,
+                  ),
+                  color: kTransparent,
+                ),
+                child: Text(
+                  'Training',
+                  style: getFont(13, color: kAppSubtitle),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                margin: EdgeInsets.only(right: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: kAppSubtitle,
+                  ),
+                  color: kTransparent,
+                ),
+                child: Text(
+                  'Basketball',
+                  style: getFont(13, color: kAppSubtitle),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 10,
+                ),
+                margin: EdgeInsets.only(right: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: kAppSubtitle,
+                  ),
+                  color: kTransparent,
+                ),
+                child: Text(
+                  'Hiking',
+                  style: getFont(13, color: kAppSubtitle),
+                ),
+              ),
             ],
           ),
         ),
-      ),
+      );
+    }
+
+    Widget popularProductsTitle() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: kDefaultMargin,
+          left: kDefaultMargin,
+          right: kDefaultMargin,
+        ),
+        child: Text(
+          'Popular Products',
+          style: getFont(22, color: kAppPrimaryText),
+        ),
+      );
+    }
+
+    Widget popularProducts() {
+      return Container(
+        margin: EdgeInsets.only(top: 14),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(
+                width: kDefaultMargin,
+              ),
+              Row(
+                children: [
+                  ProductCard(),
+                  ProductCard(),
+                  ProductCard(),
+                  ProductCard(),
+                ],
+              ),
+
+              // Row(
+              //   children: productProvider.products
+              //       .map(
+              //         (product) => ProductCard(product),
+              //       )
+              //       .toList(),
+              // ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget newArrivalsTitle() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: kDefaultMargin,
+          left: kDefaultMargin,
+          right: kDefaultMargin,
+        ),
+        child: Text(
+          'New Arrivals',
+          style: getFont(22, color: kAppPrimaryText),
+        ),
+      );
+    }
+
+    Widget newArrivals() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 14,
+        ),
+        child: Column(
+          children: [
+            ProductTile(),
+            ProductTile(),
+            ProductTile(),
+            ProductTile(),
+            ProductTile(),
+          ],
+        ),
+        // child: Column(
+        //   children: productProvider.products
+        //       .map(
+        //         (product) => ProductTile(product),
+        //       )
+        //       .toList(),
+        // ),
+      );
+    }
+
+    return ListView(
+      children: [
+        header(),
+        categories(),
+        popularProductsTitle(),
+        popularProducts(),
+        newArrivalsTitle(),
+        newArrivals(),
+      ],
     );
   }
 }
