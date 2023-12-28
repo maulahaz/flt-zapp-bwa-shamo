@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_app/extensions/x_extensions.dart';
 import 'package:flutter_app/widgets/x_widgets.dart';
-// import 'package:flutter_app/configs/x_configs.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});

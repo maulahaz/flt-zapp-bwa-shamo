@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/extensions/x_extensions.dart';
 
 import '../../../widgets/x_widgets.dart';
+import '../../../helpers/x_helpers.dart';
 import '../x_auths.dart';
 
 class RegisterPage extends StatefulWidget {
